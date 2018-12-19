@@ -9,5 +9,6 @@ element_list = ElementList.as_view()
 
 class ElementDetail(DetailView):
     model = Element
+    slug_field = 'identifier'
 
 element_detail = ElementDetail.as_view()
