@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from .models import Element
+
+class ElementList(ListView):
+    model = Element
+
+element_list = ElementList.as_view()
