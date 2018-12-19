@@ -1,5 +1,5 @@
 <ul>
 {% for element in element_list %}
-<li><a href="{% url 'elements:element_detail' element.identifier %}">{{ element.identifier }}</a></li>
+<li><a href="{% url 'elements:element_detail' element.identifier %}">{{ element.identifier }}</a> ({{ element.species_set.count }})</li>
 {% endfor %}
 </ul>
