@@ -2,7 +2,7 @@
 
 <h5>Types</h5>
 <ul>
-{% for element in object.types %}
-<li><a href="{% url 'elements:element_detail' element %}">{{ element.identifier }}</a></li>
+{% for element in object.types.all %}
+<li><a href="{% url 'elements:element_detail' element.identifier %}">{{ element.identifier }}</a></li>
 {% endfor %}
 </ul>
