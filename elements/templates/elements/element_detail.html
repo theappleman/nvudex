@@ -1,1 +1,6 @@
 <h3>{{ object.identifier }}</h3>
+<ul>
+{% for species in species_list %}
+<li><a href="{% url 'species:species_detail' species.identifier %}">{{ species.identifier }}</a></li>
+{% endfor %}
+</ul>

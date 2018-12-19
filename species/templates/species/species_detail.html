@@ -1,5 +1,10 @@
+<h3>{{ object.identifier }}</h3>
+
+Number: {{ object.pokedex }}
+
+<h5>Types</h5>
 <ul>
-{% for element in element_list %}
+{% for element in object.types.all %}
 <li><a href="{% url 'elements:element_detail' element.identifier %}">{{ element.identifier }}</a></li>
 {% endfor %}
 </ul>

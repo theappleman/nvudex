@@ -82,6 +82,7 @@ INSTALLED_APPS = [
         'django.contrib.staticfiles',
         'djangae.contrib.security',
         'elements.apps.ElementsConfig',
+        'species.apps.SpeciesConfig',
 ]
 
 MIDDLEWARE = [
