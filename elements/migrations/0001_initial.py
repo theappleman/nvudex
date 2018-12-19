@@ -5,12 +5,12 @@ from __future__ import unicode_literals
 import csv
 from django.db import migrations
 
-def ImportTypes(apps, schema_editor):
-    Type = apps.get_model("types", "Type")
+def ImportElements(apps, schema_editor):
+    Element = apps.get_model("elements", "Element")
     with open("veekun/pokedex/data/csv/types.csv", 'r') as type_f:
         data = csv.DictReader(type_f.read().splitlines())
     for row in data:
-        Type.objects.create(
+        Element.objects.create(
             id=row['id'],
             identifier=row['identifier'],
         )
@@ -21,5 +21,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(ImportTypes),
+        migrations.RunPython(ImportElements),
     ]

@@ -1,1 +1,1 @@
-default_app_config = 'types.apps.TypesConfig'
+default_app_config = 'elements.apps.ElementsConfig'
