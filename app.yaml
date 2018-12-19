@@ -1,6 +1,8 @@
 runtime: python27
 threadsafe: true
 
+builtins:
+- remote_api: on
 env_variables:
   ALLOWED_HOSTS: "*"
 handlers:
