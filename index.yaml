@@ -10,6 +10,17 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: damage_damage
+  properties:
+  - name: damage_id
+  - name: factor
+    direction: desc
+
+- kind: damage_damage
+  properties:
+  - name: target_id
+  - name: factor
+
 - kind: django_migrations
   properties:
   - name: app
