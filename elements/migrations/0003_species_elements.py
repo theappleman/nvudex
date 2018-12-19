@@ -16,6 +16,7 @@ def ImportSpeciesElements(apps, schema_editor):
             p = Species.objects.get(pk=row['pokemon_id'])
             t = Element.objects.get(pk=row['type_id'])
             p.types.add(t)
+            p.save()
         except (Species.DoesNotExist,):
             pass
 
@@ -23,7 +24,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('elements', '0002_importelements'),
-        ('species',  '0002_importspecies' ),
+        ('species',  '0003_relatedsetfield' ),
     ]
 
     operations = [
