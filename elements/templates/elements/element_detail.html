@@ -1,4 +1,7 @@
 <h3>{{ object.identifier }}</h3>
+
+Count: {{ object.species_set.count }}
+
 <ul>
 {% for species in object.species_set.all %}
 <li><a href="{% url 'species:species_detail' species.identifier %}">{{ species.identifier }}</a></li>
