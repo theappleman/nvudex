@@ -83,6 +83,7 @@ INSTALLED_APPS = [
         'djangae.contrib.security',
         'elements.apps.ElementsConfig',
         'species.apps.SpeciesConfig',
+        'damage.apps.DamageConfig',
 ]
 
 MIDDLEWARE = [
