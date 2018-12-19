@@ -1,5 +1,5 @@
 <ul>
 {% for element in element_list %}
-<li>{{ element.identifier }}</li>
+<li><a href="{% url 'elements:element_detail' element.identifier %}">{{ element.identifier }}</a></li>
 {% endfor %}
 </ul>
