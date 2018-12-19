@@ -4,3 +4,17 @@
 <li><a href="{% url 'species:species_detail' species.identifier %}">{{ species.identifier }}</a></li>
 {% endfor %}
 </ul>
+
+Deals:
+<ul>
+{% for damage in object.effective %}
+<li>{{ damage.factor }}% to <a href="{% url 'elements:element_detail' damage.target.identifier %}">{{ damage.target.identifier }}</a></li>
+{% endfor %}
+</ul>
+
+Takes:
+<ul>
+{% for target in object.resists %}
+<li>{{ target.factor }}% from <a href="{% url 'elements:element_detail' target.damage.identifier %}">{{ target.damage.identifier }}</a></li>
+{% endfor %}
+</ul>
