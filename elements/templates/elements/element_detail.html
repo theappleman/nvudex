@@ -8,6 +8,8 @@ Count: {{ object.species_set.count }}
 {% endfor %}
 </ul>
 
+<div>
+<h5>Attacking</h5>
 Deals:
 <ul>
 {% for damage in object.effective %}
@@ -15,9 +17,27 @@ Deals:
 {% endfor %}
 </ul>
 
+Bad against:
+<ul>
+{% for target in object.resisted %}
+<li>{{ target.factor }}% from <a href="{% url 'elements:element_detail' target.damage.identifier %}">{{ target.target.identifier }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+<div>
+<h5>Defending</h5>
+Resists:
+<ul>
+{% for damage in object.resistant %}
+<li>{{ damage.factor }}% from <a href="{% url 'elements:element_detail' damage.target.identifier %}">{{ damage.damage.identifier }}</a></li>
+{% endfor %}
+</ul>
+
 Takes:
 <ul>
-{% for target in object.resists %}
+{% for target in object.weak_against %}
 <li>{{ target.factor }}% from <a href="{% url 'elements:element_detail' target.damage.identifier %}">{{ target.damage.identifier }}</a></li>
 {% endfor %}
 </ul>
+</div>
