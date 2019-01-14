@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pokedex.settings")
     try:
-        from djangae.core.management import execute_from_command_line, test_execute_from_command_line
+        from django.core.management import execute_from_command_line
     except ImportError:
         # The above import may fail for some other reason. Ensure that the
         # issue is really that Django is missing to avoid masking other
@@ -19,7 +19,4 @@ if __name__ == "__main__":
                 "forget to activate a virtual environment?"
             )
         raise
-    if "test" in sys.argv:
-        test_execute_from_command_line(sys.argv)
-    else:
-        execute_from_command_line(sys.argv)
+    execute_from_command_line(sys.argv)

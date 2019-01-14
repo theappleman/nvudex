@@ -1,3 +1,0 @@
-https://github.com/potatolondon/djangae/archive/master.zip
-django-session-csrf
-GoogleAppEngineCloudStorageClient
