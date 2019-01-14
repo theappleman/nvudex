@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('elements', '0002_importelements'),
-        ('species',  '0003_relatedsetfield' ),
+        ('species',  '0002_importspecies' ),
     ]
 
     operations = [

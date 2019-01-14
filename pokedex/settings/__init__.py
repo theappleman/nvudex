@@ -16,7 +16,6 @@ import string
 from random import SystemRandom
 
 from django.core.exceptions import ImproperlyConfigured
-from djangae.settings_base import *
 
 
 def env(env_var):
@@ -72,29 +71,25 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-        'djangae',
+        'django.contrib.admin',
         'django.contrib.auth',
-        'djangae.contrib.gauth_datastore',
         'django.contrib.contenttypes',
-        'djangae.contrib.contenttypes',
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
-        'djangae.contrib.security',
         'elements.apps.ElementsConfig',
         'species.apps.SpeciesConfig',
         'damage.apps.DamageConfig',
 ]
 
 MIDDLEWARE = [
-        'djangae.contrib.security.middleware.AppEngineSecurityMiddleware',
+        'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
-        'djangae.contrib.gauth.middleware.AuthenticationMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        'session_csrf.CsrfMiddleware',
 ]
 
 ROOT_URLCONF = 'pokedex.urls'
@@ -121,7 +116,8 @@ WSGI_APPLICATION = 'pokedex.wsgi.application'
 
 DATABASES = {
         'default': {
-            'ENGINE': 'djangae.db.backends.appengine',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
 }
 # Password validation
@@ -158,9 +154,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
-
-AUTH_USER_MODEL = "gauth_datastore.GaeDatastoreUser"
-AUTHENTICATION_BACKENDS = (
-    'djangae.contrib.gauth_datastore.backends.AppEngineUserAPIBackend',
-)

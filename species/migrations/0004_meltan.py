@@ -12,14 +12,14 @@ def CreateMeltan(apps, schema_editor):
         s = Species.objects.create(
             pokedex=pkmn[0],
             identifier=pkmn[1],
-            types=[steel],
         )
+        s.types.add(steel)
 
 class Migration(migrations.Migration):
 
     dependencies = [
         ('elements', '0002_importelements'),
-        ('species', '0003_relatedsetfield'),
+        ('species', '0002_importspecies'),
     ]
 
     operations = [
